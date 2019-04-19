@@ -14,4 +14,6 @@ resource "aws_instance" "aws-terraform-lab-instance" {
     }
     key_name = "${aws_key_pair.aws-terraform-lab.id}"
     
+    vpc_security_group_ids = ["${var.aws_terraform_lab_sg_bastion}"]
+    
 }

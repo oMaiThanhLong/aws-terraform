@@ -6,6 +6,7 @@ provider "aws"{
 module "instances" {
     source = "./module/instances"
     aws_key_pair = "${var.aws_key_pair}"
+    aws_terraform_lab_sg_bastion  = "${module.vpc.aws_terraform_lab_sg_bastion}"
 }
 
 module "vpc" {
