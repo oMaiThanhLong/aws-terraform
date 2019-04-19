@@ -13,7 +13,7 @@ resource "aws_instance" "aws-terraform-lab-instance" {
         Name = "aws-terraform-lab-instance-${count.index+1}"
     }
     key_name = "${aws_key_pair.aws-terraform-lab.id}"
-    
+    subnet_id = "${var.aws_terraform_lab_subnet_id}"
     vpc_security_group_ids = ["${var.aws_terraform_lab_sg_bastion}"]
     
 }
